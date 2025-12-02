@@ -7,6 +7,8 @@ use App\Http\Controllers\ProdukController;
 
 use Illuminate\Support\Facades\Route;
 
+// didn't get paid for ts bruh 🥀
+
 Route::get('/', [ExamplesController::class, 'getData'])->name('example.index');
 Route::get('/example/create', [ExamplesController::class, 'create'])->name('example.create');
 Route::post('/example', [ExamplesController::class, 'store'])->name('example.store');

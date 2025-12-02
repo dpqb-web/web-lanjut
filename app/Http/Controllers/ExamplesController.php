@@ -32,7 +32,6 @@ class ExamplesController extends Controller
 
     public function update(Request $request, $id)
     {
-
         $data = ExamplesModel::findOrFail($id);
         $data->update($request->all());
 
