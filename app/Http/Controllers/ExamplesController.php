@@ -7,10 +7,10 @@ use Illuminate\Http\Request;
 
 class ExamplesController extends Controller
 {
-    public function getData()
+    public function index()
     {
         $data = ExamplesModel::all();
-        return view('example', compact('data'));
+        return view('example.index', compact('data'));
     }
 
     public function create()
