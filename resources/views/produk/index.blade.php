@@ -1,8 +1,6 @@
 @extends('layouts.base')
 
-@section('title')
-    Halaman Produk
-@endsection
+@section('title', 'Halaman Produk')
 
 @section('content')
 <div class="container mt-4">
@@ -38,7 +36,6 @@
                         <td colspan="6" class="text-center">Data Kosong</td>
                     </tr>
                     @endforelse
-
                 </tbody>
             </table>
         </div>

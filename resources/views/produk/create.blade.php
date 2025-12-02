@@ -4,11 +4,9 @@
 
 @section('content')
 <div class="container mt-4">
-
     <div class="card">
         <div class="card-header">Tambah Data</div>
         <div class="card-body">
-
             <form action="{{ route('produk.store') }}" method="POST">
                 @csrf
 
@@ -35,9 +33,7 @@
                 <button class="btn btn-success">Simpan</button>
                 <a href="{{ route('produk.index') }}" class="btn btn-secondary">Kembali</a>
             </form>
-
         </div>
     </div>
-
 </div>
 @endsection

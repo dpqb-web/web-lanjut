@@ -1,9 +1,8 @@
 @extends('layouts.base')
-@section('title')
-    Halaman Dosen
-@endsection
-@section('content')
 
+@section('title', 'Halaman Dosen')
+
+@section('content')
 <div class="container mt-4">
     <a href="{{ route('dosen.create') }}" class="btn btn-primary mb-3">Tambah Data</a>
     <div class="card">
@@ -19,7 +18,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                @forelse ($data as $d)
+                    @forelse ($data as $d)
                     <tr>
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ $d->nama }}</td>
@@ -30,20 +29,14 @@
                             <a href="{{ route('dosen.delete', $d->id) }}" class="btn btn-danger">Hapus</a>
                         </td>
                     </tr>
-                @empty
+                    @empty
                     <tr>
                         <td colspan="5">Tidak ada data</td>
                     </tr>
-                @endforelse
-
+                    @endforelse
                 </tbody>
-
-
             </table>
         </div>
     </div>
 </div>
-
 @endsection
-
-

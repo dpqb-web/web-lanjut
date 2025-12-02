@@ -4,11 +4,9 @@
 
 @section('content')
 <div class="container mt-4">
-
     <div class="card">
         <div class="card-header">Edit Data</div>
         <div class="card-body">
-
             <form action="{{ route('dosen.update', $data->id) }}" method="POST">
                 @csrf
 
@@ -29,11 +27,8 @@
 
                 <button class="btn btn-success">Update</button>
                 <a href="{{ route('dosen.index') }}" class="btn btn-secondary">Kembali</a>
-
             </form>
-
         </div>
     </div>
-
 </div>
 @endsection
