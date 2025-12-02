@@ -29,8 +29,8 @@
                         <td>{{ $d->harga }}</td>
                         <td>{{ $d->deskripsi }}</td>
                         <td>
-                            <a href="#" class="btn btn-warning">Edit</a>
-                            <a href="#" class="btn btn-danger">Hapus</a>
+                            <a href="{{ route('produk.edit', $d->id) }}" class="btn btn-warning">Edit</a>
+                            <a href="{{ route('produk.delete', $d->id) }}" class="btn btn-danger">Hapus</a>
                         </td>
                     </tr>
                     @empty
