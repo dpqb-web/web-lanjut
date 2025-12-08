@@ -15,6 +15,7 @@
                         <th>Nama Produk</th>
                         <th>Harga</th>
                         <th>Deskripsi</th>
+                        <th>Gambar</th>
                         <th width="150px">Aksi</th>
                     </tr>
                 </thead>
@@ -26,6 +27,9 @@
                         <td>{{ $d->nama_produk }}</td>
                         <td>{{ $d->harga }}</td>
                         <td>{{ $d->deskripsi }}</td>
+                        <td>
+                            <img src="{{ asset('storage/produk/' . $d->kode_produk) }}" width="100px" alt="{{ $d->nama_produk }}">
+                        </td>
                         <td>
                             <a href="{{ route('produk.edit', $d->id) }}" class="btn btn-warning">Edit</a>
                             <a href="{{ route('produk.delete', $d->id) }}" class="btn btn-danger">Hapus</a>

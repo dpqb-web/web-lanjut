@@ -7,7 +7,7 @@
     <div class="card">
         <div class="card-header">Tambah Data</div>
         <div class="card-body">
-            <form action="{{ route('example.store') }}" method="POST">
+            <form action="{{ route('mahasiswa.store') }}" method="POST">
                 @csrf
 
                 <div class="mb-3">
@@ -26,7 +26,7 @@
                 </div>
 
                 <button class="btn btn-success">Simpan</button>
-                <a href="{{ route('example.index') }}" class="btn btn-secondary">Kembali</a>
+                <a href="{{ route('mahasiswa.index') }}" class="btn btn-secondary">Kembali</a>
             </form>
         </div>
     </div>

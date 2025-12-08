@@ -2,33 +2,33 @@
 
 use App\Http\Controllers\Index;
 
-use App\Http\Controllers\ExamplesController;
-use App\Http\Controllers\DosenController;
-use App\Http\Controllers\ProdukController;
+use App\Http\Controllers\Mahasiswa;
+use App\Http\Controllers\Dosen;
+use App\Http\Controllers\Produk;
 
 use Illuminate\Support\Facades\Route;
 
-// didn't get paid for ts bruh 🥀
+// didn't get paid for ts bruh 😭💔🥀
 
 Route::get('/', [Index::class, 'index'])->name('index');
 
-Route::get('/example', [ExamplesController::class, 'index'])->name('example.index');
-Route::get('/example/create', [ExamplesController::class, 'create'])->name('example.create');
-Route::post('/example/store', [ExamplesController::class, 'store'])->name('example.store');
-Route::get('/example/edit/{id}', [ExamplesController::class, 'edit'])->name('example.edit');
-Route::post('/example/update/{id}', [ExamplesController::class, 'update'])->name('example.update');
-Route::get('/example/delete/{id}', [ExamplesController::class, 'destroy'])->name('example.delete');
+Route::get('/mahasiswa', [Mahasiswa::class, 'index'])->name('mahasiswa.index');
+Route::get('/mahasiswa/create', [Mahasiswa::class, 'create'])->name('mahasiswa.create');
+Route::post('/mahasiswa/create', [Mahasiswa::class, 'store'])->name('mahasiswa.store');
+Route::get('/mahasiswa/edit/{id}', [Mahasiswa::class, 'edit'])->name('mahasiswa.edit');
+Route::post('/mahasiswa/edit/{id}', [Mahasiswa::class, 'update'])->name('mahasiswa.update');
+Route::get('/mahasiswa/delete/{id}', [Mahasiswa::class, 'destroy'])->name('mahasiswa.delete');
 
-Route::get('/dosen', [DosenController::class, 'index'])->name('dosen.index');
-Route::get('/dosen/create', [DosenController::class, 'create'])->name('dosen.create');
-Route::post('/dosen/store', [DosenController::class, 'store'])->name('dosen.store');
-Route::get('/dosen/edit/{id}', [DosenController::class, 'edit'])->name('dosen.edit');
-Route::post('/dosen/update/{id}', [DosenController::class, 'update'])->name('dosen.update');
-Route::get('/dosen/delete/{id}', [DosenController::class, 'destroy'])->name('dosen.delete');
+Route::get('/dosen', [Dosen::class, 'index'])->name('dosen.index');
+Route::get('/dosen/create', [Dosen::class, 'create'])->name('dosen.create');
+Route::post('/dosen/create', [Dosen::class, 'store'])->name('dosen.store');
+Route::get('/dosen/edit/{id}', [Dosen::class, 'edit'])->name('dosen.edit');
+Route::post('/dosen/edit/{id}', [Dosen::class, 'update'])->name('dosen.update');
+Route::get('/dosen/delete/{id}', [Dosen::class, 'destroy'])->name('dosen.delete');
 
-Route::get('/produk', [ProdukController::class, 'index'])->name('produk.index');
-Route::get('/produk/create', [ProdukController::class, 'create'])->name('produk.create');
-Route::post('/produk/store', [ProdukController::class, 'store'])->name('produk.store');
-Route::get('/produk/edit/{id}', [ProdukController::class, 'edit'])->name('produk.edit');
-Route::post('/produk/update/{id}', [ProdukController::class, 'update'])->name('produk.update');
-Route::get('/produk/delete/{id}', [ProdukController::class, 'destroy'])->name('produk.delete');
+Route::get('/produk', [Produk::class, 'index'])->name('produk.index');
+Route::get('/produk/create', [Produk::class, 'create'])->name('produk.create');
+Route::post('/produk/create', [Produk::class, 'store'])->name('produk.store');
+Route::get('/produk/edit/{id}', [Produk::class, 'edit'])->name('produk.edit');
+Route::post('/produk/edit/{id}', [Produk::class, 'update'])->name('produk.update');
+Route::get('/produk/delete/{id}', [Produk::class, 'destroy'])->name('produk.delete');

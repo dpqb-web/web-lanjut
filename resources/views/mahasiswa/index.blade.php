@@ -4,7 +4,7 @@
 
 @section('content')
 <div class="container mt-4">
-    <a href="{{ route('example.create') }}" class="btn btn-primary mb-3">Tambah Data</a>
+    <a href="{{ route('mahasiswa.create') }}" class="btn btn-primary mb-3">Tambah Data</a>
     <div class="card">
         <div class="card-body">
             <table class="table table-bordered table-striped">
@@ -25,8 +25,8 @@
                         <td>{{ $row->email }}</td>
                         <td>{{ $row->alamat }}</td>
                         <td>
-                            <a href="{{ route('example.edit', $row->id) }}" class="btn btn-warning btn-sm">Edit</a>
-                            <a href="{{ route('example.delete', $row->id) }}" class="btn btn-danger btn-sm" onclick="return confirm('Hapus data ini?')">Hapus</a>
+                            <a href="{{ route('mahasiswa.edit', $row->id) }}" class="btn btn-warning btn-sm">Edit</a>
+                            <a href="{{ route('mahasiswa.delete', $row->id) }}" class="btn btn-danger btn-sm" onclick="return confirm('Hapus data ini?')">Hapus</a>
                         </td>
                     </tr>
                     @empty

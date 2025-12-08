@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\ProdukModel;
+use App\Models\Produk as ModelProduk;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
-class ProdukController extends Controller
+class Produk extends Controller
 {
     public function index()
     {
-        $data = ProdukModel::all();
+        $data = ModelProduk::all();
         return view('produk.index', compact('data'));
     }
 
@@ -20,28 +21,31 @@ class ProdukController extends Controller
 
     public function store(Request $request)
     {
-        ProdukModel::create($request->all());
+        ModelProduk::create($request->all());
+        Storage::disk('public')->putFileAs('produk', $request->file('gambar'), $request->input('kode_produk'));
         return redirect()->route('produk.index')->with('success', 'Data berhasil ditambahkan!');
     }
 
     public function edit($id)
     {
-        $data = ProdukModel::findOrFail($id);
+        $data = ModelProduk::findOrFail($id);
         return view('produk.edit', compact('data'));
     }
 
     public function update(Request $request, $id)
     {
-        $data = ProdukModel::findOrFail($id);
+        $data = ModelProduk::findOrFail($id);
         $data->update($request->all());
+        Storage::disk('public')->putFileAs('produk', $request->file('gambar'), $request->input('kode_produk'));
 
         return redirect()->route('produk.index')->with('success', 'Data berhasil diperbarui!');
     }
 
     public function destroy($id)
     {
-        $data = ProdukModel::findOrFail($id);
+        $data = ModelProduk::findOrFail($id);
         $data->delete();
+        Storage::disk('public')->delete('produk/' . $data->kode_produk);
 
         return redirect()->route('produk.index')->with('success', 'Data berhasil dihapus!');
     }

@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\DosenModel;
+use App\Models\Dosen as ModelDosen;
 use Illuminate\Http\Request;
 
-class DosenController extends Controller
+class Dosen extends Controller
 {
     public function index()
     {
-        $data = DosenModel::all();
+        $data = ModelDosen::all();
         return view('dosen.index', compact('data'));
     }
 
@@ -20,19 +20,19 @@ class DosenController extends Controller
 
     public function store(Request $request)
     {
-        DosenModel::create($request->all());
+        ModelDosen::create($request->all());
         return redirect()->route('dosen.index')->with('success', 'Data berhasil ditambahkan!');
     }
 
     public function edit($id)
     {
-        $data = DosenModel::findOrFail($id);
+        $data = ModelDosen::findOrFail($id);
         return view('dosen.edit', compact('data'));
     }
 
     public function update(Request $request, $id)
     {
-        $data = DosenModel::findOrFail($id);
+        $data = ModelDosen::findOrFail($id);
         $data->update($request->all());
 
         return redirect()->route('dosen.index')->with('success', 'Data berhasil diperbarui!');
@@ -40,7 +40,7 @@ class DosenController extends Controller
 
     public function destroy($id)
     {
-        $data = DosenModel::findOrFail($id);
+        $data = ModelDosen::findOrFail($id);
         $data->delete();
 
         return redirect()->route('dosen.index')->with('success', 'Data berhasil dihapus!');

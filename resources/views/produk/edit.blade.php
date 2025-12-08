@@ -7,7 +7,7 @@
     <div class="card">
         <div class="card-header">Edit Data</div>
         <div class="card-body">
-            <form action="{{ route('produk.update', $data->id) }}" method="POST">
+            <form action="{{ route('produk.update', $data->id) }}" method="POST" enctype="multipart/form-data">
                 @csrf
 
                 <div class="mb-3">
@@ -28,6 +28,11 @@
                 <div class="mb-3">
                     <label>Deskripsi</label>
                     <textarea name="deskripsi" class="form-control" required>{{ $data->deskripsi }}</textarea>
+                </div>
+
+                <div class="mb-3">
+                    <label>Gambar</label>
+                    <input type="file" name="gambar" class="form-control" required>
                 </div>
 
                 <button class="btn btn-success">Update</button>

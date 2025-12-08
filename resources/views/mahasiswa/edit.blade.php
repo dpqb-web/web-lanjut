@@ -7,7 +7,7 @@
     <div class="card">
         <div class="card-header">Edit Data</div>
         <div class="card-body">
-            <form action="{{ route('example.update', $data->id) }}" method="POST">
+            <form action="{{ route('mahasiswa.update', $data->id) }}" method="POST">
                 @csrf
 
                 <div class="mb-3">
@@ -26,7 +26,7 @@
                 </div>
 
                 <button class="btn btn-success">Update</button>
-                <a href="{{ route('example.index') }}" class="btn btn-secondary">Kembali</a>
+                <a href="{{ route('mahasiswa.index') }}" class="btn btn-secondary">Kembali</a>
             </form>
         </div>
     </div>
